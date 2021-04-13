@@ -26,10 +26,13 @@ const tables = [
 //when no path specified sends user to home page
 app.get('/', (req, res)=>res.send(path.join(__dirname, 'home.html')));
 
-//when client requests reservations
+//sends user directly to reso page if specifically requested
+app.get('/reso', (req, res)=>res.send(path.join(__dirname, 'reso')));
+
+//when client requests reservation data
 app.get('/api/tables', (req, res)=>res.json(tables));
 
-//when client posts reservation data 
+//when client posts new reservation data 
 app.post('/api/reso', (req, res)=>{
     const tablePost = req.body;
     const newTable = new ResoClass(tablePost.name, tablePost.number, tablePost.id, tablePost.email );
