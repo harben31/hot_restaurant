@@ -1,0 +1,42 @@
+body {
+    padding: 0 80px;
+}
+
+.currentRes,
+.waitList {
+    margin: 35px 0;
+}
+
+.currentHeading {
+    background-color: #E9ECEF;
+    border: 1px solid #CED4DA;
+}
+.currentBody {
+    border: 1px solid #CED4DA;
+    
+}
+.table {
+    border: 1px solid #CED4DA;
+    margin: 40px 20px 20px 20px;
+    padding: 0 20px;
+}
+
+.tableList {
+    list-style-type: none;
+}
+
+hr {
+    border-top: 1px solid #CED4DA;
+}
+.waitHeading {
+    background-color: #E9ECEF;
+    border: 1px solid #CED4DA;
+}
+
+.waitBody {
+    border: 1px solid #CED4DA;
+}
+
+.waitTable {
+    border: 1px solid #CED4DA;
+}
