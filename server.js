@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const ResoClass = require('resoClass');
+const ResoClass = require('./assets/js/lib/resoClass');
 
 const path = require('path');
 
@@ -8,6 +8,7 @@ const port = 3500;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 const tables = [
     {
@@ -24,10 +25,10 @@ const tables = [
     }
 ]
 //when no path specified sends user to home page
-app.get('/', (req, res)=>res.send(path.join(__dirname, 'home.html')));
+app.get('/', (req, res)=>res.sendFile(path.join(__dirname, './public/home.html')));
 
-//sends user directly to reso page if specifically requested
-app.get('/reso', (req, res)=>res.send(path.join(__dirname, 'reso')));
+//cannot find file even though it is there
+// app.get('/reso', (req, res)=>res.sendFile(path.join(__dirname, './public/reso.hmtl')));
 
 //when client requests reservation data
 app.get('/api/tables', (req, res)=>res.json(tables));
@@ -43,7 +44,5 @@ app.post('/api/reso', (req, res)=>{
     Your reservation ID is ${tablePost.id}`)
 });
 
-app.listen(port, ()=>{
-    console.log(`server runnin on ${port}`)
-})
+app.listen(port, ()=>console.log(`server runnin on ${port}`))
 
