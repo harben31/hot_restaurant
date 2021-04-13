@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Reservation</title>
+</head>
+<body>
+    <header>
+        <div class="container"> 
+            <h1 class="headerTitle">Hot Restaurant</h1>
+            <h2>Make your reservation</h2>
+            <div class="button">
+                <a href="#"><button type="button" class="vBtn">View Tables</button></a>
+                <a href="#"><button type="button" class="hBtn">Home</button></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="waitList">
+            <div class="waitHeading">
+                <h4>Table Reservation</h4>
+            </div>
+            <div class="waitBody">
+                <!-- waitTable will go here -->
+                <form action="/action_page.php">
+                    <label for="name">Name: </label><br><br>
+                    <input type="text" id="name" name="name"><br><br>
+                    <label for="phone">Phone Number: </label><br><br>
+                    <input type="text" id="phone" name="phone"><br><br>
+                    <label for="email">Email: </label><br><br>
+                    <input type="text" id="email" name="email"><br><br>
+                    <label for="id">Unique ID: </label><br><br>
+                    <input type="text" id="id" name="id"><br><br>
+                    <input type="submit" value="Submit" class="sBtn">
+                  </form>  
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div>
+            <p><a href="#">API Table Link</a> | <a href="#">API Wait List</a></p>
+        </div>
+      </footer>
+    
+</body>
+</html>
