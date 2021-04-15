@@ -39,10 +39,10 @@ app.post('/api/reso', (req, res)=>{
     const newTable = new ResoClass(tablePost.name, tablePost.number, tablePost.id, tablePost.email );
     tables.push(newTable);
     res.send(`Thank you ${tablePost.name} for making a reservation.
-    We ill call you at ${tablePost.phone} or email you at ${tablePost.email} 
+    We will call you at ${tablePost.phone} or email you at ${tablePost.email} 
     when your table is ready. 
     Your reservation ID is ${tablePost.id}`)
 });
 
-app.listen(port, ()=>console.log(`server runnin on ${port}`))
+app.listen(port, ()=>console.log(`server runnin on ${port}`));
 
