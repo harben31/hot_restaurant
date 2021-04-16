@@ -46,11 +46,11 @@
         </div>
       </footer>
     
-</body>
-</html>
+
 <script>
 $(".submit").on("click", (event)=> {
     event.preventDefault();
+    
     let newReso = {
         customerName:$('#name').val(),
         customerPhone:$('#phone').val(),
@@ -66,12 +66,14 @@ $(".submit").on("click", (event)=> {
         }else {
           alert("Sorry you are on the wait list");
         }
-        $('#name').val();
-        $('#phone').val();
-        $('#email').val();
-        $('#id').val();
+        $('#name').val('');
+        $('#phone').val('');
+        $('#email').val('');
+        $('#id').val('');
     });
 
 })
 
 </script>
+</body>
+</html>
