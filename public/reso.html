@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <title>Reservation</title>
@@ -14,8 +14,8 @@
             <h1 class="headerTitle">Hot Restaurant</h1>
             <h2>Make your reservation</h2>
             <div class="button">
-                <a href="#"><button type="button" class="vBtn">View Tables</button></a>
-                <a href="#"><button type="button" class="hBtn">Home</button></a>
+                <a href="./tables.html"><button type="button" class="vBtn">View Tables</button></a>
+                <a href="./home.html"><button type="button" class="hBtn">Home</button></a>
             </div>
         </div>
     </header>
@@ -52,16 +52,16 @@ $(".submit").on("click", (event)=> {
     event.preventDefault();
     
     let newReso = {
-        customerName:$('#name').val(),
-        customerPhone:$('#phone').val(),
-        customerEmail:$('#email').val(),
-        customerId:$('#id').val()
+        name:$('#name').val(),
+        number:$('#phone').val(),
+        id:$('#id').val(),
+        email:$('#email').val()
 
     }
     console.log(newReso);
 
     $.post("/api/reso", newReso, (data)=>{
-        if(data){
+        if(data<5){
             alert("Yay! Your table booked!");  
         }else {
           alert("Sorry you are on the wait list");
